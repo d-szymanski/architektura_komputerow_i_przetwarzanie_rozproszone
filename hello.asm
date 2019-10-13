@@ -21,6 +21,7 @@ _start:
     mov rdx, 12     ; number of bytes
     syscall         ; run
 
-    mov rax, 60     ; sys_exit
+_end:               ; sys_exit
+    mov rax, 60
     xor rdi, 0      ; exit code 0
     syscall         ; run
