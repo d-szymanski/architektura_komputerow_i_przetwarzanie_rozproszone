@@ -39,7 +39,7 @@ _sum:
   mov qword [sumAnswer], rax 
   ret ; return to call
 
-_multiplier
+_multiplier:
   mov rax, qword [globalNumber1]
   mul qword [globalNumber2] ; wynik w rax i rdx
   mov qword [mulAnswer], rax
