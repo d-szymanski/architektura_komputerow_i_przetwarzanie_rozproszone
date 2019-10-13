@@ -2,10 +2,14 @@
 ; Arithmetic operations in assembly 
 ; To assemble and run:
 ;
-;     nasm -felf64 arithmetic.asm && ld -o arithmetic.out arithmetic.o &&
-./arithmetic.out
+;     nasm -felf64 arithmetic.asm && ld -o arithmetic.out arithmetic.o && ./arithmetic.out
 ; ----------------------------------------------------------------------------------------
 
+; gdb add - breakpoint
+; b _end 
+; run
+; si - step in - nastepna instrukacja
+; infore registers
 
 section .data
   globalNumber1   dq 42000
