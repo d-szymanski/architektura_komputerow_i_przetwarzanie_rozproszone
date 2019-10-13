@@ -5,11 +5,12 @@
 ;     nasm -felf64 arithmetic.asm && ld -o arithmetic.out arithmetic.o && ./arithmetic.out
 ; ----------------------------------------------------------------------------------------
 
-; gdb add - breakpoint
-; b _end 
-; run
-; si - step in - nastepna instrukacja
-; infore registers
+; gdb arithmetic - start gdb on arithmetic program
+; b _end - set breakpoint on _end label
+; run - run our program
+; info registers - log registers values
+; si - step in - next instructions
+: c - continue to next breakpoint or end of a program
 
 section .data
   globalNumber1   dq 42000
