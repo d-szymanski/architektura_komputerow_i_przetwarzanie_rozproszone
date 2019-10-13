@@ -16,25 +16,32 @@
 section .data
   globalNumber1   dq 420
   globalNumber2   dq 730
-  sumAnswer       dq 0
-  mulAnswer       dq 0
- 
+
+section .bss ; just variable declarations without value
+  sumAnswer reso 1
+  mulAnswer reso 1
+
 section .text
   global _start
 
 _start:
+  call _sum
+  call _multiplier
+
+_end: 
+  mov rax, 60
+  mov rdi, 0
+  syscall
+
 _sum:
   mov rax, qword [globalNumber1]
   add rax, qword [globalNumber2]
   mov qword [sumAnswer], rax 
+  ret ; return to call
 
 _multiplier
   mov rax, qword [globalNumber1]
   mul qword [globalNumber2] ; wynik w rax i rdx
   mov qword [mulAnswer], rax
   mov qword [mulAnswer+8], rdx
-
-_end: 
-  mov rax, 60
-  mov rdi, 0
-  syscall
+  ret
