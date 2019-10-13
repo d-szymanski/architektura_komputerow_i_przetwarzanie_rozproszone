@@ -88,12 +88,21 @@ _calc:
   mov qword [Ans13+8], rdx
 
 ; Ans16 = Num1 / Num2
-
+  mov rdx, 0            ; clear
+  mov rax, qword [Num1] ; divident
+  div qword [Num2]
+  mov qword [Ans16], rax ; main in rax, rest in rdx
 
 ; Ans17 = Num3 / Num4
-
+  mov rdx, 0
+  mov rax, qword [Num3]
+  div qword [Num4]
+  mov qword [Ans17], rax
 
 ; Ans18 = Num1 / Num4
-
- ret
-
+  mov rdx, 0
+  mov rax, qword [Num1]
+  div qword [Num4]
+  mov qword [Ans18], rax
+  
+  ret ; return from call
