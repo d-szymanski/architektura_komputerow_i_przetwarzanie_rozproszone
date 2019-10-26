@@ -25,7 +25,7 @@ _end:
 
 _odd_sum_loop:
     add qword[sum], rax
-    add rax, 2 # move to next odd number
+    add rax, 2 ; move to next odd number
     dec rcx
     cmp rcx, 0
     jne _odd_sum_loop
