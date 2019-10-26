@@ -15,20 +15,21 @@ section .text
     global _start
 
 _start:
-    mov rcx, qword [lpCount]
-    mov rax, 1
+    mov rax, 1 ; start from 1
+    mov rcx, qword [lpCount] ; count through lpCount
     call _first_sum_loop
     mov rax, 1
-    mov ecx, dword[lpCount]
+    mov ecx, dword[lpCount] ; same count, just bigger register
     call _second_sum_loop
+
 _end: 
   mov rax, 60
   mov rdi, 0
   syscall
 
-_first_sum_loop:
+_first_sum_loop: ; summ every second number, rcx times
     add qword[sum1], rax
-    add rax, 2 ; move to next odd number
+    add rax, 2 ; jump over one number
     dec rcx
     cmp rcx, 0
     jne _first_sum_loop
