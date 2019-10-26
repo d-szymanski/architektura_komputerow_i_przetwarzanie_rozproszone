@@ -2,6 +2,10 @@
 
 Instructions: https://mgruszczynski.pl/cdv/asm/
 
+Exercises:
+https://mgruszczynski.pl/cdv/asm/z1.html
+https://mgruszczynski.pl/cdv/asm/z2.html
+
 ## Compiling
 
 Compile, link and run debugger!
