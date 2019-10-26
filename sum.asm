@@ -2,7 +2,7 @@
 ; Writes sum of odd numbers from 0 to 15 to the console using only system calls. Runs on 64-bit Linux only. (for mac there is $0x2000000 offset for every system call)
 ; To assemble and run:
 ;
-;     nasm -felf64 sum.asm && ld -o sum.out sum.o && ./sum.out
+;     nasm -felf64 sum.asm && ld -o sum.out sum.o && gdb sum.out
 ; ----------------------------------------------------------------------------------------
 
 
