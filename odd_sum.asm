@@ -25,10 +25,10 @@ _end:
   syscall
 
 _sum_loop:
-    mov rax, qword [temp]
-    mov rdx, 0
+    mov rax, qword [temp] ; first bytes
+    mov rdx, 0 ; second bytes
     div rbx
-    cmp rdx, 1
+    cmp rdx, 1 ; compare result to 1
     jne _next ;jump if not qual (avoid incrementation)
     mov rax, qword [temp] 
     add qword [sum], rax ; increment
