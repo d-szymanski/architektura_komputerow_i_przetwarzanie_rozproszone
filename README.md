@@ -41,3 +41,12 @@ nasm -felf64 a.asm && ld -o a.out a.o && gdb a.out
 `c` - continue to next breakpoint or end of a program
 
 `ctrl + z` - end program
+
+## Note
+```
+_end:
+        mov rax, 60
+        mov rdi, 0
+        syscall
+```
+
