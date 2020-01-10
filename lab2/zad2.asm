@@ -1,23 +1,28 @@
 section .data
-	n	dq	5
-	result	dq	0
+	n	dq	7
+
+section .bss
+	result	resq	1
 
 section .text
-	global _start
+	global	_start
 
 _start:
-	mov rax, 0
-	mov rcx, qword [n]
-_loopSum:
-	add rax, rcx
-	dec rcx
-	cmp rcx, 0
-	jne _loopSum
-_squareSum:
+	mov rcx, qword[n]
+	mov rdx, 1
+
+_sumUp:
+	add rax, rdx
+	inc rdx
+	loop _sumUp
+
+_multiply:
 	mul rax
-	mov qword [result], rax
+	mov qword[result], rax
+	mov qword[result+8], rdx
 
 _end:
-	mov rax, 60
-	mov rdi, 0
-	syscall
+    mov rax, 60
+    mov rdi, 0
+    syscall
+
