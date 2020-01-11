@@ -1,10 +1,10 @@
 section .data
-	fileName	db	"plik.txt"
+	fileName	db	"plik.txt",0
 	len		dq	18
 
 section .bss
-	message	resb	18
-	fd	resb	1
+	message		resb	18
+	fd		resb	1
 
 section .text
 	global _start
