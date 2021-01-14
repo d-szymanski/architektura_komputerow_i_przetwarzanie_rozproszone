@@ -8,20 +8,28 @@ Exercises:
 
 - https://mgruszczynski.pl/cdv/asm/z2.html
 
+- https://mgruszczynski.pl/cdv/asm/excersises
+
 ## Compiling
 
 Compile, link and run debugger!
 
 ```bash
-nasm -felf64 a.asm
-ld -o a.out a.o
-gdb a.out
+nasm -felf64 fileName.asm
+ld -o fileName.out fileName.o
+gdb fileName.out
 ```
 
 Or one liner:
 
 ```bash
-nasm -felf64 a.asm && ld -o a.out a.o && gdb a.out
+File="lab3.2" && nasm -felf64 $File.asm && ld -o $File.out $File.o && gdb $File.out
+```
+
+Compiling C - one liner
+
+```bash
+File="lab3.2" && gcc -Wall $File.c -o $File.out && ./$File.out
 ```
 
 ## Debugging
@@ -30,9 +38,13 @@ nasm -felf64 a.asm && ld -o a.out a.o && gdb a.out
 
 `b _end` - set breakpoint on \_end label
 
-`r` or `run` - run our program 
+`r` or `run` - run our program
 
-`p variable` or `print variable` - print variable
+`p (type)variable` or `print (type)variable` - print variable
+
+```
+p (int)result
+```
 
 `i r` or `info registers` - log registers values
 

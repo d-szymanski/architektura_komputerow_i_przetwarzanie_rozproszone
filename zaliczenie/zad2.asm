@@ -9,7 +9,7 @@ section .bss
 section .text
 	global _start
 
-_start: 
+_start:
 
 _open:
 	mov rax, 2
@@ -34,12 +34,12 @@ _close:
 _print:
 	mov rax, 1
 	mov rdi, 1
-    	mov rsi, message
-    	mov rdx, len
+	mov rsi, message
+	mov rdx, len
 	syscall
 
 _end:
-        mov rax, 60
-        mov rdi, 0
-        syscall
+	mov rax, 60
+	mov rdi, 0
+	syscall
 
